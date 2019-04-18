@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+<title> html page</title>
+<h1><center>STUDENT REGISTRATION FORMS</h1>
+<script type="text/javascript">
+function valid()
+{
+var name=document.reg.name.value;
+var email=document.reg.email.value;
+var phno=document.reg.phno.value;
+var clz=document.reg.clz.value;
+var add=document.reg.add.value;
+var pass=document.reg.password.value;
+var cpass=document.reg.conform.value;
+if(!isNaN(name))
+{
+alert("In name Enter Characters only");
+return false;
+}
+if(name.length<3)
+{
+alert("In name enter more than 3 chars"); 
+return false;
+}
+if(isNaN(phno))
+{
+alert("In Phone no enter numbers only");
+return false;
+}
+if(phno.length!=10)
+{
+alert("In phone no Enter 10 numbers ");
+return false;
+}
+if(pass.length<6)
+{
+alert("In Password contain more than 6 chars");
+return false;
+}
+if(pass!=cpass)
+{
+alert("Password is match with Conform Password");
+return false;
+}
+}
+</script>
+</head>
+<body align="center">
+<form name="reg"  onsubmit="return valid()">
+<table align="center">
+
+<tr>
+<td><label> Name :</label></td>
+<td><input type=text name="name" placeholde="enter your name"  required></td></tr>
+<br>
+<tr>
+<td><label> Email Id :</label></td>
+<td><input type=text name="email" placeholde="enter your email" required></td>
+</tr>
+<br>
+<tr>
+<td><label> Phone No : </label></td>
+<td><input type=text name="phno" placeholde="enter your Phone number" required></td>
+</tr>
+<br>
+<tr>
+<td><label> Password :</label></td>
+<td><input type= "password" name= "password" placeholde="Enter your password" required></td><br>
+</tr>
+<tr>
+<td><label> Conform Password :</label></td>
+<td><input type= "password" name= "conform" placeholde="Enter Conform Password" required></td><br>
+</tr>
+<tr>
+<td><label> Gender : </label></td>
+<td><input type=radio name="gen" value="male" required>Male</td> 
+<td><input type=radio name="gen" value="femle" required>Female</td></tr>
+<br>
+<tr><td>
+<label> Collage Name : </label></td>
+<td><input type=text name="clz" placeholde="enter your collage name" required>
+</td></tr><br>
+<tr>
+<td><label> Branch :</label></td>
+<td><input type=radio name="branch" value="civil" required >Civil</td>
+<td><input type=radio name="branch" value="ece" required >EEE</td>
+<td><input type=radio name="branch" value="mech" required >Mech</td>
+<td><input type=radio name="branch" value="ece" required >ECE</td>
+<td><input type=radio name="branch" value="cse" required >CSE</td>
+</tr>
+<br>
+<tr><td>
+<label>Address :</label></td>
+<td><textarea rows="5" cols="10" name="add" required></textarea></td>
+</tr><br>
+</table>
+<input align="center" type=submit value="submit">
+</form>
+</body>
+</html>
